@@ -2,8 +2,13 @@
   padding:0;
   margin:0;
   font-family: 'Roboto', sans-serif;
+  border-radius: 25px;
+   
 }
-
+#topContacts{
+ font-size: 14px;
+ }
+ 
 .clearfix {
   overflow: auto;
 }
@@ -15,7 +20,7 @@
 
 h1 {
   font-size: 40px;
-  color: #F5A623;
+  color: #330099; /* F5A623 */
   line-height: 48px;
   display: inline;
 }
@@ -81,22 +86,27 @@ a {
 
 .welcome-message {
   font-style: italic;
-  font-size: 18px;
+  font-size: 34px;
   color: #F3F3F3;
   line-height: 28px;
+  
 }
 
 #skillsH3 {
   color: #F5AE23;
   display: none;
+
 }
+#skills{
+  flex-direction: row;
+  }
 
 .orange {
-  background-color: #F5AE23;
+  background-color: #33CCFF;
 }
 
 .orange-text {
-  color: #F5AE23;
+  color: #330099;
 }
 
 .white-text {
@@ -111,12 +121,12 @@ a {
 }
 
 .dark-gray {
-  background-color: #4A4A4A;
+  background-color: #A8A8A8;
 }
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #B0B0B0; /* 484848 */
 }
 
 .flex-box {
@@ -125,7 +135,8 @@ a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 10px;
+  padding: 0px;
+  color: #330099;
 }
 
 .center-content {
@@ -137,18 +148,20 @@ a {
 
 ul {
   list-style-type: none;
+ 
 }
 
 .biopic {
   float: left;
   padding: 10px;
-  width: 200px;
+  width: 150px;
   display: none;
 }
 
 img {
   padding: 10px;
 }
+
 
 /* Bar chart stuff */
 .chart div {
@@ -167,7 +180,8 @@ span {
 }
 
 #letsConnect {
-  text-align: center;
+  text-align:center
+  
 }
 
 @media only screen and (max-width: 1024px) {
@@ -191,9 +205,26 @@ span {
   }
   .welcome-message {
     display: none;
+	
   }
 }
 
+.tilt {
+ -webkit-transition: all 0.5s ease;
+ -moz-transition: all 0.5s ease;
+ -o-transition: all 0.5s ease;
+ -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  }
+ 
+.tilt:hover {
+-webkit-transform: rotate(-10deg);
+-moz-transform: rotate(-10deg);
+-o-transform: rotate(-10deg);
+-ms-transform: rotate(-10deg);
+transform: rotate(-10deg);
+}
+ 
 #map {
   display: block;
   height: 100%;
@@ -211,5 +242,6 @@ span {
   #skillsH3,
   .biopic {
     display: block;
+	color: #330099;
   }
 }
