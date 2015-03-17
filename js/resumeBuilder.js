@@ -6,6 +6,7 @@ var formattedRole = HTMLheaderRole.replace("%data%", role);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName); 
 
+//Bio
 var bio ={
 	"name" : " Joffrey Williams",
 	"role": " Web Developer ",
@@ -20,9 +21,8 @@ var bio ={
 	"skills" : [
 	 "Six Sigma Greenbelt", "Process Improvement", "Quality Management", "Training and Development", "Labor Relations"],
 	"bioPic": "\images/IMG_24.png"
-}
-   
-	
+} 
+//Header Info	
     var formattedmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 	$("#topContacts").prepend(formattedmobile);
 	$("#footerContacts").append(formattedmobile);
@@ -55,6 +55,8 @@ var bio ={
   var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
   $("#skills").append(formattedSkill);
   }
+  
+ //Education
 var education = { 
   "schools":[
      {
@@ -127,6 +129,8 @@ for (school in education.schools) {
 	}
 }
 displayEducation();
+
+//Work
 var work = {
   "jobs": [
      { 
@@ -175,6 +179,7 @@ for (job in work.jobs) {
 }
 displayWork();
 
+//Projects
 var projects = {
   "projects": [
     {
