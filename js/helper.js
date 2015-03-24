@@ -43,7 +43,7 @@ var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%" class="projectimg  tilt  pic">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%</a>'
+var HTMLschoolName = '<a href="#">%data%</a>';
 var HTMLschoolDegree = '<a href="#">%data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
@@ -170,7 +170,7 @@ function initializeMap() {
 
     // hmmmm, I wonder what this is about...
     google.maps.event.addListener(marker, 'click', function() {
-      infowindow.open(map, marker);
+      infoWindow.open(map, marker);
     });
 
     // this is where the pin actually gets added to the map.

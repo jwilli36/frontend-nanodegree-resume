@@ -1,11 +1,3 @@
-
-var formattedName = HTMLheaderName.replace("%data%", name);
-
-var role = "Web Developer";
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName); 
-
 //Bio
 var bio ={
 	"name" : " Joffrey Williams",
@@ -21,8 +13,19 @@ var bio ={
 	"skills" : [
 	 "Six Sigma Greenbelt", "Process Improvement", "Quality Management", "Training and Development", "Labor Relations"],
 	"bioPic": "\images/IMG_24.png"
-} 
-//Header Info	
+}; 
+
+//Display Bio Info
+ bio.display = function(){
+     //Header Info
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+
+    var role = "Web Developer";
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedName); 
+ 
+     //Top and Bottom contact info
     var formattedmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 	$("#topContacts").prepend(formattedmobile);
 	$("#footerContacts").append(formattedmobile);
@@ -48,14 +51,16 @@ var bio ={
 	
 	var formattedMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage); 
 	$("#topContacts").append(formattedMsg);
-	
     $("#header").append(HTMLskillsStart);
 	
-  for (var i = 0; i < bio.skills.length; i++){ 
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-  $("#skills").append(formattedSkill);
+	//Display skills info
+   for (var i = 0; i < bio.skills.length; i++){ 
+   var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+   $("#skills").append(formattedSkill);
   }
-  
+}
+  bio.display();
+
  //Education
 var education = { 
   "schools":[
@@ -90,9 +95,11 @@ var education = {
 	   "url": "http://www.depaul.edu"
 	 } 
 	]
-}
-function displayEducation() {
-for (school in education.schools) {
+};
+
+//Display Education
+education.display = function() {
+for (var school in education.schools) {
   $("#education").append(HTMLschoolStart);
   var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
   var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
@@ -110,9 +117,9 @@ for (school in education.schools) {
   $(".education-entry:last").append(formattedschoolMajor);
 	}
 	
-	$("#education").append(HTMLonlineClasses);
- for (onlineCourse in education.onlineCourses) {
-    $("#education").append(HTMLschoolStart);
+   $("#education").append(HTMLonlineClasses);
+for (var onlineCourse in education.onlineCourses) {
+   $("#education").append(HTMLschoolStart);
   var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
   var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
   var formattedTitleSchool = formattedonlineTitle + formattedonlineSchool;
@@ -128,9 +135,9 @@ for (school in education.schools) {
   $(".education-entry:last").append(formattedonlineURL);
 	}
 }
-displayEducation();
+education.display();
 
-//Work
+//Work Object
 var work = {
   "jobs": [
      { 
@@ -154,11 +161,13 @@ var work = {
 		"location": "Fort Dix, New Jersey",
 		"dates" : "Dec 1989 - May 1997",
 		"description" : "Troubleshoot and repaired communication receivers, transmitters, digital and voice satellite communications, multiplexors, electronic switching and radar systems. Analysed testing and troubleshooting data to determine required repair. Diagnosed malfunctions using schematics, wiring diagrams and test equipment. Removed and replaced faulty system wiring, electrical connectors, antennas, transmission lines, and multi conductor cables. Analysed and resolved computer system hardware and software problems. "
-	}
+	},
 	]
 }
-function displayWork() {
-for (job in work.jobs) {
+
+//Display Work
+work.display = function () {
+for (var job in work.jobs) {
   $("#workExperience").append(HTMLworkStart);
   
   var formattedworkEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
@@ -175,11 +184,11 @@ for (job in work.jobs) {
   
   var formattedworkDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
   $(".work-entry:last").append(formattedworkDescription);
+      
  }
 }
-displayWork();
-
-//Projects
+  work.display();
+//Projects Object
 var projects = {
   "projects": [
     {
@@ -196,8 +205,9 @@ var projects = {
     }	   
 	 ]
 	};
+	//Display Projects
 projects.display = function () {
-for (project in projects.projects) {
+for (var project in projects.projects) {
   $("#projects").append(HTMLprojectStart);
   
   var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
@@ -210,7 +220,7 @@ for (project in projects.projects) {
   $(".project-entry:last").append(formattedDescription); 
   
   if (projects.projects[project].images.length > 0) {
-    for (image in projects.projects[project].images) {
+    for (var image in projects.projects[project].images) {
 	  var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
 	  $(".project-entry:last").append(formattedImage);  
      }
@@ -228,3 +238,5 @@ $(document).click(function(loc){
  $('#main').append(internationalizeButton);
  
  $("#mapDiv").append(googleMap);
+ 
+ 
