@@ -55,6 +55,12 @@ var HTMLonlineSchool = '<a - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
+var HTMLcourseClasses = '<h3>Courses </h3>';
+var HTMLcourseTitle = '<a href="#">%data%';
+var HTMLcourseSchool = '<a - %data%</a>';
+var HTMLcourseDates = '<div class="date-text">%data%</div>';
+var HTMLcourseURL = '<br><a href="#">%data%</a>';
+
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 
