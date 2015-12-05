@@ -6,12 +6,12 @@ var bio ={
 	  "mobile": "773-415-3834",
 	  "email": " joffrey.williams1@gmail.com ",
 	  "github" : " jwilli36 ",
-	  "linkedin": "www.linkedin.com/in/jjwwwil",
+	  "linkedin": "http://www.linkedin.com/in/jjwwil",
 	  "location": "Chicago"
 	},
-	"welcomeMessage": "Welcome to my Professional resume page",  
+	"welcomeMessage": "Telecommunications Manager with a nine year career highlighted by consistent achievement in teambuilding, quality management and technician development. Outstanding qualifications in building and managing relationships with engineering and customer service advocates. Deep expertise with labor relations and collective bargaining processes.",  
 	"skills" : [
-	 "Six Sigma Greenbelt", "Process Improvement", "Quality Management", "Training and Development", "Labor Relations"],
+	 "Team Building", "Maintenance Management", "Productivity Management", "Leadership", "Policy & Procedures", "Collective Bargaining", "Six Sigma Greenbelt", "Process Improvement", "Quality Management", "Training & Development", "Labor Relations", "Safety Audits"],
 	"bioPic": "\images/IMG_24.png"
 }; 
 
@@ -67,7 +67,7 @@ var education = {
      {
 	   "name": "DeVry University",
 	   "location": "Chicago, IL, US",
-	   "degree": "BS",
+	   "degree": "Bachelors of Science",
 	   "major" : ["Telecommunications Management", " Finance"],
 	   "dates" : 2003,
 	   "url": "www.Devry.edu"
@@ -92,6 +92,32 @@ var education = {
 	   "title": "VOIP",
 	   "school" : "DePaul University",
 	   "dates": 2004,
+	   "url": "http://www.depaul.edu"
+	 } 
+	],
+	"Courses":[
+     {
+	   "title": "Fundamentals of Avionic Systems",
+	   "school" : "Community College of the Air Force",
+	   "dates": 1990,
+	   "url": "http://www.ccaf.edu"
+	 },
+	{
+	   "title": "Basic Electronic Principles/Circuits",
+	   "school" : "Community College of the Air Force",
+	   "dates": 1990,
+	   "url": "http://www.ccaf.edu"
+	 },
+	{
+	   "title": "Cellular/Wireless Telecom",
+	   "school" : "DePaul University",
+	   "dates": 2004,
+	   "url": "http://www.depaul.edu"
+	 },
+	{
+	   "title": "Local Area Networks",
+	   "school" : "DePaul University",
+	   "dates": 2005,
 	   "url": "http://www.depaul.edu"
 	 } 
 	]
@@ -134,6 +160,24 @@ for (var onlineCourse in education.onlineCourses) {
   var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
   $(".education-entry:last").append(formattedonlineURL);
 	}
+	
+	$("#education").append(HTMLcourseClasses);
+for (var Course in education.Courses) {
+   $("#education").append(HTMLschoolStart);
+  var formattedcourseTitle = HTMLcourseTitle.replace("%data%", education.Courses[Course].title);
+  var formattedcourseSchool = HTMLcourseSchool.replace("%data%", education.Courses[Course].school);
+  var formattedTitleSchool = formattedcourseTitle + formattedcourseSchool;
+  
+  $(".education-entry:last").append(formattedTitleSchool);
+  
+  
+  var formattedcourseDates = HTMLcourseDates.replace("%data%", education.Courses[Course].dates);
+  $(".education-entry:last").append(formattedcourseDates);
+  
+  
+  var formattedcourseURL = HTMLcourseURL.replace("%data%", education.Courses[Course].url);
+  $(".education-entry:last").append(formattedcourseURL);
+	}	
 }
 education.display();
 
@@ -141,18 +185,49 @@ education.display();
 var work = {
   "jobs": [
      { 
-	    "employer" : " ATT ",
+	    "employer" : " AT&T ",
 	    "title" : "Manager Business Services",
 		"location": "Chicago, Il",
-		"dates": "Nov 1997 - Current",
-	    "description": "Provide leadership and mentoring to a team of 13 Customer Service Field Technicians engaged in the installation, maintenance, cable repair and routine maintenance of DS0 and hi capacity circuits(T1 through OC Level). Additionally, perform quality and safety reviews, assist in employee development and interact with interact and external customers.Assure the highest levels of customer service and achieve safety, reliability and productivity goals within departmental budgets. Execute labor strategies involving employees covered under a collective bargaining agreement. Respond to emergent facility conditions and coordinate emergency response to restore system configuration and/or customers."	  
+		"dates": "Sep 2014 - Current",
+	    "description": "Lead and mentor a team of 15 Business Services technicians engaged in the installation and maintenance of evolving high speed technologies including switched and dedicated ethernet services, ethernet over light speed services and software defined network services. Evaluate performance levels of technicians through the use of quality and safety observations and ride-with exercises resulting 10% fewer repeat dispatches.   Execute labor strategies involving employees covered under the collective bargaining agreement. Plan resource coverage and execute work activities directed at achievement of efficiency, productivity and utilization objectives."	  
 	 },
 	 { 
-	    "employer" : " ATT ",
+	    "employer" : " AT&T ",
+	    "title" : "Manager Network Services",
+		"location": "Chicago, Il",
+		"dates": "Feb 2011 - Sep 2014",
+	    "description": "Managed and mentored a crew of 29 Network technicians engaged in the installation, maintenance and cable repair of Sub Rate (DSO) & high capacity circuits (T1 through OC level). Handled customer escalations and interacted with peer work groups ensuring timely resolution of service related issues resulting in improved customer service results. Responded to emergency facility outages and coordinated emergency responses to restore system configuration and/or service to customers."	  
+	 },
+	 { 
+	    "employer" : " AT&T ",
 		"title" : " Manager Network Support",
 		"location": "Chicago, Il",
 		"dates" : "Apr 2010 - Feb 2011",
-		"description" : "Worked with internal and external customers through various mediums to resolve high profile network outages. Used network monitoring tools to monitor network performance and capacity daily. Developed a non-routine process to resolve hardware/software compatibility issues and guided users in required operational changes. Utilized network operation and maintenance concepts to troubleshoot network problems. Provided guidance to field technicians during the installation, configuration and troubleshooting of LAN and WAN components. Assisted with the redesign of network infrastructure in response to changes in network requirements and network technologies."
+		"description" : "Developed non-routine steps to resolve hardware/software compatibility issues, test software and guided users in required operational changes. Participated in implementation and deployment planning and execution of network migrations. Provided guidance to field technicians during the installation, configuration and troubleshooting of LAN and WAN components. Assisted with the redesign of network infrastructure in response to changes in network requirements and network technologies. Interacted with internal and external customers through various mediums to resolve high profile network outages."
+		  
+	 },
+	 { 
+	    "employer" : " AT&T ",
+		"title" : " Uverse Operations Manager",
+		"location": "Chicago, Il",
+		"dates" : "Feb 2008 - Apr 2010",
+		"description" : "Developed and lead new-hire technicians in achieving performance and quality objectives associated with UVERSE services. Handled customer escalations and interacted with other work groups to ensure timely resolution of service issues. Utilized strong performance management and communication skills to develop and correct technician performance and behavior. Scheduled a workforce appropriately to the workload and analyzed previous workload trends to make necessary adjustments."
+		  
+	 },
+	 { 
+	    "employer" : " AT&T ",
+		"title" : " Special Services Manager",
+		"location": "Chicago, Il",
+		"dates" : "Feb 2005 - Feb 2008",
+		"description" : "Led and developed a group of customer systems technicians in achieving the performance and quality objectives associated with the provisioning and maintenance of special service circuit levels DS0 through OC-n and Gigaman. Handled customer escalations and interacted with peer work groups ensuring timely resolution of service related issues resulting in improved customer service results. Evaluated performance levels of technicians through the use of quality and safety observations and ride-with exercises resulting in 10% fewer repeat dispatches. Coached technicians on changing technical environment, new technical practices, and customer contact skills."
+		  
+	 },
+	 { 
+	    "employer" : " SBC ",
+		"title" : " Customer Systems Technician",
+		"location": "Chicago, Il",
+		"dates" : "Nov 1997 - Jun 2005",
+		"description" : "Consistently performed at the top installing and maintaining T carrier, Gigaman and OC-N level high capacity circuits. Worked with cross-functional groups to meet customer and operational commitments. Identified and reported system and circuit problems to appropriate work groups. Assisted in the development of network routing designs for circuits using required tools. Designated to train 12 DS0 technicians in adding DS1 qualifications to their skill set. Selected to install over 20 Gig E circuits for the Chicago Public Schools in their transformation for copper to fiber technology."
 		  
 	 },
 	 { 
@@ -160,7 +235,7 @@ var work = {
 		"title" : " Communications/Navigations Systems Specialist",
 		"location": "Fort Dix, New Jersey",
 		"dates" : "Dec 1989 - May 1997",
-		"description" : "Troubleshoot and repaired communication receivers, transmitters, digital and voice satellite communications, multiplexors, electronic switching and radar systems. Analysed testing and troubleshooting data to determine required repair. Diagnosed malfunctions using schematics, wiring diagrams and test equipment. Removed and replaced faulty system wiring, electrical connectors, antennas, transmission lines, and multi conductor cables. Analysed and resolved computer system hardware and software problems. "
+		"description" : "Trouble shot and repaired communication receivers, transmitters, digital and voice satellite communications, multiplexors, electronic switching and radar systems. Analysed testing and troubleshooting data to determine required repair. Diagnosed malfunctions using schematics, wiring diagrams and test equipment. Removed and replaced faulty system wiring, electrical connectors, antennas, transmission lines, and multi conductor cables. Analysed and resolved computer system hardware and software problems. "
 	},
 	]
 }
@@ -199,10 +274,22 @@ var projects = {
 	},
 	{
       "title": "Interactive Resume",
-      "dates": "2014",
+      "dates": "2015",
       "description": "Design an Interactive Resume",
       "images" : ["\images/Resume1.png"]
-    }	   
+    },
+    {
+      "title": "Interactive Map",
+      "dates": "2015",
+      "description": "Design an Interactive GoogleMap ",
+      "images" : ["\images/map.png"]
+    },
+    {
+      "title": "Arcade Game",
+      "dates": "2015",
+      "description": "Arcade Game Design",
+      "images" : ["\images/arcade.png"]
+    }	
 	 ]
 	};
 	//Display Projects
