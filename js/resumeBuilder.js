@@ -11,7 +11,7 @@ var bio ={
 	},
 	"welcomeMessage": "Telecommunications Manager with a nine year career highlighted by consistent achievement in teambuilding, quality management and technician development. Outstanding qualifications in building and managing relationships with engineering and customer service advocates. Deep expertise with labor relations and collective bargaining processes.",  
 	"skills" : [
-	 "Team Building", "Maintenance Management", "Productivity Management", "Leadership", "Policy & Procedures", "Collective Bargaining", "Six Sigma Greenbelt", "Process Improvement", "Quality Management", "Training & Development", "Labor Relations", "Safety Audits"],
+	 "Team Building", "Maintenance Management", "Productivity Management", "Leadership", "Policy & Procedures", "Collective Bargaining", "Six Sigma Greenbelt", "Process Improvement", "Quality Management", "Training & Development", "Labor Relations", "Performance Management"],
 	"bioPic": "\images/IMG_24.png"
 }; 
 
