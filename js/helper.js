@@ -12,8 +12,13 @@ Cameron Pittman
 These are HTML strings. As part of the course, you'll be using JavaScript functions
 replace the %data% placeholder text you see in them.
 */
+<<<<<<< HEAD
 var HTMLheaderName = '<h1 id="name">Joffrey Williams</h1>';
 var HTMLheaderRole = '<span>Front End Web Developer</span><hr/>';
+=======
+var HTMLheaderName = '<h1 id="name">%data%</h1>';
+var HTMLheaderRole = '<span>%data%</span><hr>';
+>>>>>>> refs/remotes/udacity/master
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="orange-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="orange-text">mobile</span><span class="white-text">%data%</span></li>';
@@ -23,10 +28,15 @@ var HTMLgithub = '<li class="flex-item"><span class="orange-text">github</span><
 var HTMLlinkedin = '<li class="flex-item"><span class="orange-text">linkedin</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="orange-text">location</span><span class="white-text">%data%</span></li>';
 
+<<<<<<< HEAD
 var HTMLbioPic = '<img src="%data%" class="biopic tilt pic">';
 var HTMLWelcomeMsg = '<span class="welcome-message">%data%</span>';
+=======
+var HTMLbioPic = '<img src="%data%" class="biopic">';
+var HTMLwelcomeMsg = '<span class="welcome-message">%data%</span>';
+>>>>>>> refs/remotes/udacity/master
 
-var HTMLskillsStart = '<h3 id="skillsH3">Skills at a Glance:</h3><ul id="skills" class="flex-box"></ul>';
+var HTMLskillsStart = '<h3 id="skills-h3">Skills at a Glance:</h3><ul id="skills" class="flex-column"></ul>';
 var HTMLskills = '<li class="flex-item"><span class="white-text">%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
@@ -66,19 +76,20 @@ var googleMap = '<div id="map"></div>';
 
 
 /*
-The International Name challenge in Lesson 2 where you'll create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
+The Internationalize Names challenge found in the lesson Flow Control from JavaScript Basics requires you to create a function that will need this helper code to run. Don't delete! It hooks up your code to the button you'll be appending.
 */
 $(document).ready(function() {
   $('button').click(function() {
-    var iName = inName() || function(){};
-    $('#name').html(iName);  
+    var $name = $('#name');
+    var iName = inName($name.text()) || function(){};
+    $name.html(iName);
   });
 });
 
 /*
-The next few lines about clicks are for the Collecting Click Locations quiz in Lesson 2.
+The next few lines about clicks are for the Collecting Click Locations quiz in the lesson Flow Control from JavaScript Basics.
 */
-clickLocations = [];
+var clickLocations = [];
 
 function logClicks(x,y) {
   clickLocations.push(
@@ -115,8 +126,10 @@ function initializeMap() {
     disableDefaultUI: true
   };
 
-  // This next line makes `map` a new Google Map JavaScript Object and attaches it to
-  // <div id="map">, which is appended as part of an exercise late in the course.
+  /*
+  For the map to be displayed, the googleMap var must be
+  appended to #mapDiv in resumeBuilder.js.
+  */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
 
@@ -133,16 +146,20 @@ function initializeMap() {
     locations.push(bio.contacts.location);
 
     // iterates through school locations and appends each location to
-    // the locations array
-    for (var school in education.schools) {
-      locations.push(education.schools[school].location);
-    }
+    // the locations array. Note that forEach is used for array iteration
+    // as described in the Udacity FEND Style Guide:
+    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+    education.schools.forEach(function(school){
+      locations.push(school.location);
+    });
 
     // iterates through work locations and appends each location to
-    // the locations array
-    for (var job in work.jobs) {
-      locations.push(work.jobs[job].location);
-    }
+    // the locations array. Note that forEach is used for array iteration
+    // as described in the Udacity FEND Style Guide:
+    // https://udacity.github.io/frontend-nanodegree-styleguide/javascript.html#for-in-loop
+    work.jobs.forEach(function(job){
+      locations.push(job.location);
+    });
 
     return locations;
   }
@@ -209,17 +226,16 @@ function initializeMap() {
     var service = new google.maps.places.PlacesService(map);
 
     // Iterates through the array of locations, creates a search object for each location
-    for (var place in locations) {
-
+      locations.forEach(function(place){
       // the search request object
       var request = {
-        query: locations[place]
+        query: place
       };
 
       // Actually searches the Google Maps API for location data and runs the callback
       // function with the search results after each search.
       service.textSearch(request, callback);
-    }
+    });
   }
 
   // Sets the boundaries of the map based on pin locations
@@ -243,7 +259,14 @@ Uncomment the code below when you're ready to implement a Google Map!
 
 // Vanilla JS way to listen for resizing of the window
 // and adjust map bounds
+<<<<<<< HEAD
   window.addEventListener('resize', function(e) {
   // Make sure the map bounds get updated on page resize
   map.fitBounds(mapBounds);
   });
+=======
+//window.addEventListener('resize', function(e) {
+  //Make sure the map bounds get updated on page resize
+//  map.fitBounds(mapBounds);
+//});
+>>>>>>> refs/remotes/udacity/master

@@ -1,6 +1,17 @@
-* {
+body,
+div,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   padding:0;
   margin:0;
+<<<<<<< HEAD
   font-family: 'Roboto', sans-serif;
   border-radius: 25px;
    
@@ -10,17 +21,28 @@
  }
  
 .clearfix {
+=======
+  font-family: "Roboto", sans-serif;
+}
+
+.clear-fix {
+>>>>>>> refs/remotes/udacity/master
   overflow: auto;
 }
 
-.education-entry, .work-entry, .project-entry {
-  padding-left: 5%;
-  padding-right: 5%;
+.education-entry,
+.work-entry,
+.project-entry {
+  padding: 0 5%;
 }
 
 h1 {
   font-size: 40px;
+<<<<<<< HEAD
   color: #330099; /* F5A623 */
+=======
+  color: #f5a623;
+>>>>>>> refs/remotes/udacity/master
   line-height: 48px;
   display: inline;
 }
@@ -28,7 +50,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999999;
+  color: #999;
   line-height: 29px;
   padding: 10px;
 }
@@ -36,28 +58,30 @@ h2 {
 h3 {
   font-style: italic;
   font-size: 20px;
-  color: #000000;
+  color: #000;
   line-height: 22px;
 }
 
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: #4A4A4A;
+  color: #4a4a4a;
   line-height: 17px;
 }
 
-h2, h3, h4, h5 {
-  padding:10px;
-  padding-left: 5%;
-  padding-right: 5%;
+h2,
+h3,
+h4,
+h5 {
+  padding:10px 5%;
+
 }
 
 
 .date-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999;
+  color: #999;
   line-height: 16px;
   float: left;
 }
@@ -65,7 +89,7 @@ h2, h3, h4, h5 {
 .location-text {
   font-style: italic;
   font-size: 14px;
-  color: #999999;
+  color: #999;
   line-height: 16px;
   float: right;
 
@@ -73,12 +97,12 @@ h2, h3, h4, h5 {
 
 p {
   font-size: 14px;
-  color: #333333;
+  color: #333;
   line-height: 21px;
 }
 
 a {
-  color: #1199C3;
+  color: #1199c3;
   text-decoration: none;
   margin-top: 10px;
   display: block;
@@ -86,14 +110,19 @@ a {
 
 .welcome-message {
   font-style: italic;
+<<<<<<< HEAD
   font-size: 20px;
   color: #F3F3F3;
+=======
+  font-size: 18px;
+  color: #f3f3f3;
+>>>>>>> refs/remotes/udacity/master
   line-height: 28px;
   
 }
 
-#skillsH3 {
-  color: #F5AE23;
+#skills-h3 {
+  color: #f5ae23;
   display: none;
 
 }
@@ -102,26 +131,38 @@ a {
   }
 
 .orange {
+<<<<<<< HEAD
   background-color: #33CCFF;
 }
 
 .orange-text {
   color: #330099;
+=======
+  background-color: #f5ae23;
+}
+
+.orange-text {
+  color: #f5ae23;
+>>>>>>> refs/remotes/udacity/master
 }
 
 .white-text {
   font-weight: bold;
-  color: #FFFFFF;
+  color: #fff;
 }
 
 .gray {
-  background-color: #F3F3F3;
+  background-color: #f3f3f3;
   padding-bottom: 10px;
   clear:both;
 }
 
 .dark-gray {
+<<<<<<< HEAD
   background-color: #A8A8A8;
+=======
+  background-color: #4a4a4a;
+>>>>>>> refs/remotes/udacity/master
 }
 
 #header {
@@ -138,11 +179,15 @@ a {
   color: #330099;
 }
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
+
 .center-content {
-  padding-top: 2.5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 2.5%
+  padding: 2.5% 5%;
 }
 
 ul {
@@ -161,6 +206,7 @@ img {
   padding: 10px;
 }
 
+<<<<<<< HEAD
 
 /* Bar chart stuff */
 .chart div {
@@ -174,17 +220,26 @@ img {
   display: inline-block;
 }
 
+=======
+>>>>>>> refs/remotes/udacity/master
 span {
   padding: 5px;
 }
 
+<<<<<<< HEAD
 #letsConnect {
   text-align:center
   
+=======
+#lets-connect {
+  text-align: center;
+>>>>>>> refs/remotes/udacity/master
 }
 
+/* Media queries to handle various device widths */
+
 @media only screen and (max-width: 1024px) {
-  #letsConnect {
+  #lets-connect {
     margin-top: 5%;
   }
 }
@@ -196,7 +251,7 @@ span {
 }
 
 @media only screen and (max-width: 750px) {
-  #letsConnect {
+  #lets-connect {
     margin-top: 10%;
   }
   .biopic {
@@ -227,8 +282,7 @@ transform: rotate(-10deg);
 #map {
   display: block;
   height: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 0 5%;
 }
 
 #mapDiv {
@@ -238,7 +292,7 @@ transform: rotate(-10deg);
 }
 
 @media only screen and (min-width: 750px) {
-  #skillsH3,
+  #skills-h3,
   .biopic {
     display: block;
 	color: #330099;

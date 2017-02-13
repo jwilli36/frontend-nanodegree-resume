@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //Bio
 var bio ={
 	"name" : " Joffrey Williams",
@@ -327,3 +328,8 @@ $(document).click(function(loc){
  $("#mapDiv").append(googleMap);
  
  
+=======
+/*
+This is empty on purpose! Your code to build the resume will go here.
+ */
+>>>>>>> refs/remotes/udacity/master
